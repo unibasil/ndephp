@@ -3,7 +3,7 @@
  * By Daniel15 - http://www.d15.biz/
  */
 
-const {	NDEIndex, NDEDatabase, NDEData } = require('nde-data-types.js');
+const {	NDEIndex, NDEDatabase, NDEData } = require('nde.js');
 
 /**
  * A record, our internal representation. Nothing's here, look at* NDEDatabase::__construct
@@ -66,8 +66,11 @@ class NDEField {
 		// And this is the rest of the data.
 		this.raw = data.readAsArrayBuffer(data, 14, this.size);
 
-		NDEDatabase.debug_msg('&rarr; <strong>Field:</strong> Column ID: ' + this.id + ' . type: ' + this.type +
-			', size: ' + this.size + ', next: ' + this.next + ', prev: ' + this.prev + '<br />');
+		NDEDatabase.debug_msg('&rarr; <strong>Field:</strong> Column ID: ' + this.id +
+			' . type: ' + this.type +
+			', size: ' + this.size +
+			', next: ' + this.next +
+			', prev: ' + this.prev + '<br />');
 
 		// Actually get the data, depending on type.
 		switch (this.type) {
@@ -219,7 +222,7 @@ class NDEField_DateTime extends NDEField_Data {
  * Print binary data as hex (eg. 0xDE 0xAD 0xFF 0x01)
  */
 function print_binary(stuff) {
-	for ($i = 0; $i < stuff.length; $i++) {
-		console.log('0x' + stuff[$i].toString(16));
+	for (i = 0; i < stuff.length; i++) {
+		console.log('0x' + stuff[i].toString(16));
 	}
 }
