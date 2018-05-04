@@ -1,0 +1,14 @@
+[gen_ml_config]
+mv_sort_by=0
+mv_sort_dir=0
+column0=0
+column1=1
+column2=2
+column3=3
+nbcolumns=4
+lastquery_utf8=
+mv_col_artist=140
+mv_col_title=140
+mv_col_album=140
+mv_col_length=55
+midivvis=0
